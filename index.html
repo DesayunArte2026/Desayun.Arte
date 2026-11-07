@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DesayunArte2026: desayunos sorpresa personalizados para cumpleaños, aniversarios y ocasiones especiales en Jaén capital.">
+<link rel="stylesheet" href="all.min.css">
+<link rel="stylesheet" href="fontawesome.min.css">
+<title>DesayunArte2026 | Desayunos sorpresa</title>
+<style>
+:root{--pink:#ffc6cb;--pink-light:#fff0f1;--rose:#d96f87;--wine:#562832;--ink:#302329;--cream:#fffaf8;--shadow:0 12px 35px #56283215}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#fffaf8ed;backdrop-filter:blur(12px);border-bottom:1px solid #f5dadd}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:Georgia,serif;font-size:1.7rem;font-weight:bold;color:var(--wine)}.brand span{display:block;font: .65rem system-ui;letter-spacing:.2em;text-align:center;color:var(--rose)}
+nav{display:flex;gap:25px;align-items:center;font-size:.95rem}nav a:hover{color:var(--rose)}
+.btn{display:inline-flex;justify-content:center;align-items:center;background:var(--wine);color:white;border:0;padding:12px 21px;border-radius:999px;font-weight:700;cursor:pointer;transition:.2s}.btn:hover{background:var(--rose);transform:translateY(-1px)}.btn.light{background:white;color:var(--wine);border:1px solid #f0c5cb}
+.menu-toggle{display:none;border:0;background:none;font-size:1.8rem;color:var(--wine)}
+.hero{padding:64px 0 70px;background:linear-gradient(115deg,var(--pink-light),#ffe1e4 60%,#fff7f2);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--rose);font-weight:800;font-size:.78rem}
+h1,h2{font-family:Georgia,"Times New Roman",serif;color:var(--wine);line-height:1.12}h1{font-size:clamp(2.6rem,5vw,4.7rem);margin:14px 0 20px}h1 em{color:var(--rose);font-weight:normal}h2{font-size:clamp(2rem,3vw,3rem);margin:0 0 14px}.hero p{font-size:1.1rem;max-width:530px;color:#684b51}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.hero-photo{position:relative}.hero-photo img{width:100%;height:530px;object-fit:cover;border-radius:45% 45% 22px 22px;box-shadow:var(--shadow);border:8px solid white}.bubble{position:absolute;bottom:25px;left:-22px;background:white;padding:16px 20px;border-radius:18px;box-shadow:var(--shadow);font-family:Georgia,serif;color:var(--wine);font-size:1.05rem}
+section{padding:78px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 38px}.section-head p{color:#80666b}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service{background:white;padding:28px;border-radius:22px;box-shadow:var(--shadow);border:1px solid #f9e2e5}.service .icon{font-size:2rem}.service h3{color:var(--wine);font-family:Georgia,serif;font-size:1.35rem;margin:12px 0 8px}.service p{color:#80666b;margin:0}
+.gallery{background:var(--pink-light)}.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.gallery-grid img{width:100%;height:auto;object-fit:contain;border-radius:22px;border:7px solid white;box-shadow:var(--shadow)}
+.booking-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}.booking-copy{background:var(--pink-light);padding:32px;border-radius:24px}.booking-copy p{color:#80666b}.booking-copy ul{padding-left:20px}.booking-form{background:white;border:1px solid #f6dfe2;padding:30px;border-radius:24px;box-shadow:var(--shadow)}
+form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:.9rem;font-weight:700;margin-bottom:6px}input,select,textarea{width:100%;padding:12px 13px;border:1px solid #e8cfd3;border-radius:11px;font:inherit;background:#fffdfd;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:2px solid #e9a8b5;border-color:transparent}textarea{resize:vertical;min-height:105px}.field{margin-bottom:16px}.wide{grid-column:1/-1}.form-note{font-size:.82rem;color:#8a7075;margin:12px 0 0}
+.titulo{color: #562832;}
+.contact{background:linear-gradient(120deg,#ffe1e4,#fff5ef)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}.contact-card{background:white;padding:30px;border-radius:22px;box-shadow:var(--shadow)}.contact-line{display:flex;gap:13px;align-items:flex-start;margin:18px 0}.contact-line strong{display:block;color:var(--wine)}.social{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+footer{background:var(--wine);color:#fff0f1;padding:27px 0;text-align:center;font-size:.9rem}footer a{color:white;text-decoration:underline}
+@media(max-width:800px){.hero-grid,.booking-grid,.contact-grid{grid-template-columns:1fr}.hero{padding-top:42px}.hero-photo img{height:420px}.bubble{left:8px}.services{grid-template-columns:1fr 1fr}.nav{min-height:68px}nav{display:none;position:absolute;left:0;right:0;top:68px;background:#fffaf8;padding:20px;flex-direction:column;border-bottom:1px solid #f5dadd}nav.open{display:flex}.menu-toggle{display:block}.nav .btn{display:none}}
+@media(max-width:560px){section{padding:55px 0}.services,.gallery-grid,form .form-grid{grid-template-columns:1fr}.gallery-grid img{height:350px}.hero-photo img{height:360px}.booking-form,.booking-copy,.contact-card{padding:22px}.hero-actions .btn{width:100%}}
+
+/* Catálogo de precios en Flexbox */
+.prices{background:linear-gradient(135deg,var(--pink-light),#ffdfe3)}
+.price-flex{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:24px}
+.price-card{flex:1 1 280px;max-width:350px;background:var(--wine);color:#fff0f1;border:7px solid #fff0f1;border-radius:24px;padding:26px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.price-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid #ffffff35;padding-bottom:12px}
+.price-name{font-family:Georgia,serif;font-size:1.45rem;color:#ffd5dc;font-weight:700}
+.price-value{font-family:Georgia,serif;font-size:1.7rem;font-weight:800;color:#fff}
+.price-includes{text-align:center;font-family:Georgia,serif;font-size:1.1rem;margin:14px 0 8px;color:#ffd5dc}
+.price-details{display:flex;gap:16px;flex:1}
+.price-details ul{padding-left:18px;margin:0;flex:1;font-size:.91rem}
+.price-details li{margin:5px 0}
+.price-order{margin-top:22px;background:#ffd5dc;color:var(--wine);text-align:center}
+.price-order:hover{background:#fff}
+@media(max-width:560px){.price-card{flex-basis:100%;max-width:100%}.price-details{gap:10px}.price-details ul{font-size:.88rem} .gallery-grid img{height: auto; object-fit: contain;}}
+
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="brand" href="#inicio">desayun.Arte<span>DESAYUNOS SORPRESA</span></a>
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav id="navlinks"><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#galeria">Galería</a><a href="#reservas">Reservar</a><a href="#contacto">Contacto</a></nav>
+  <a class="btn" href="#reservas">Haz tu pedido</a>
+ </div>
+</header>
+<main>
+<section class="hero" id="inicio"><div class="container hero-grid">
+    <div>
+        <div class="eyebrow">Un detalle que se recuerda</div>
+        <h1>Sorprende con un <em>desayuno</em> especial</h1>
+        <p>Desayunos sorpresa personalizados, frescos y preparados con mucho cariño para celebrar los momentos más bonitos.</p>
+        <div class="hero-actions">
+            <a class="btn" href="#reservas">Reserva tu sorpresa</a>
+            <a class="btn light" href="#servicios">Descubre nuestros servicios</a>
+        </div>
+    </div>
+    <div class="hero-photo">
+        <img src="IMG-20261104-WA0067.jpg" alt="Desayuno sorpresa personalizado con globos, bebidas y dulces">
+        <!-- <div class="bubble">🎀 Hecho con cariño para ti</div> -->
+    </div>
+</section>
+<section id="servicios">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Nuestros detalles</div>
+            <h2>Servicios para cada ocasión</h2>
+            <p>Creamos propuestas personalizadas para que cada celebración sea única.</p>
+        </div>
+        <div class="services">
+            <article class="service">
+                <div class="icon">🎁</div>
+                <h3>Desayunos sorpresa</h3>
+                <p>Bandejas con desayunos dulces y salados, bebidas y detalles cuidadosamente seleccionados.</p>
+            </article>
+            <article class="service">
+                <div class="icon">🎈</div>
+                <h3>Decoración con globos</h3>
+                <p>Presentaciones alegres y bonitas para sorprender desde el primer momento.</p>
+            </article>
+            <article class="service">
+                <div class="icon">🎂</div>
+                <h3>Cumpleaños</h3>
+                <p>Un regalo original y personalizado para celebrar un nuevo año de vida.</p>
+            </article>
+            <article class="service">
+                <div class="icon">💞</div>
+                <h3>Aniversarios y bodas</h3>
+                <p>Detalles románticos para parejas y celebraciones especiales.</p>
+            </article>
+            <article class="service">
+                <div class="icon">🌷</div>
+                <h3>Jubilación y agradecimientos</h3>
+                <p>Una sorpresa dulce para homenajear a alguien importante.</p>
+            </article>
+            <article class="service">
+                <div class="icon">✨</div>
+                <h3>Pedidos personalizados</h3>
+                <p>Cuéntanos tu idea y prepararemos una propuesta a tu gusto.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="prices" id="precios">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Nuestros desayunos</div>
+            <h2>Catálogo de precios</h2>
+            <p>Elige la cesta perfecta para sorprender a esa persona especial.</p>
+        </div>
+        <div class="price-flex">
+            <article class="price-card">
+                <div class="price-top">
+                    <span class="price-name">Cesta pequeña</span>
+                    <span class="price-value">40€</span>
+                </div>
+                <p class="price-includes">Incluye:</p>
+                <div class="price-details">
+                    <ul>
+                        <li>Bandeja 34 × 24 cm</li>
+                        <li>Arco de globos</li>
+                        <li>Tarjeta de felicitación</li>
+                        <li>Vela</li>
+                    </ul>
+                    <ul>
+                        <li>Sándwich de jamón y queso</li>
+                        <li>Yogur con granola</li>
+                        <li>Mini tarta</li>
+                        <li>Zumo</li>
+                        <li>Café</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="price-card">
+                <div class="price-top">
+                    <span class="price-name">Cesta mediana</span>
+                    <span class="price-value">50€</span>
+                </div>
+                <p class="price-includes">Incluye:</p>
+                <div class="price-details">
+                    <ul>
+                        <li>Bandeja 40 × 25 cm</li>
+                        <li>Arco de globos</li>
+                        <li>Globo burbuja</li>
+                        <li>Tarjeta de felicitación</li>
+                        <li>Planta pequeña</li>
+                        <li>Vela</li>
+                    </ul>
+                    <ul>
+                        <li>Sándwich de jamón y queso</li>
+                        <li>Yogur con muesli</li>
+                        <li>Macedonia de frutas</li>
+                        <li>Una chocolatina</li>
+                        <li>Mini tarta</li>
+                        <li>Zumo</li>
+                        <li>Café</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="price-card">
+                <div class="price-top">
+                    <span class="price-name">Cesta grande</span>
+                    <span class="price-value">65€</span>
+                </div>
+                <p class="price-includes">Incluye:</p>
+                <div class="price-details">
+                    <ul>
+                        <li>Bandeja 45 × 28 cm</li>
+                        <li>Arco de globos</li>
+                        <li>Globo burbuja con nombre</li>
+                        <li>Tarjeta de felicitación</li>
+                        <li>Planta pequeña</li>
+                        <li>Vaso de regalo</li>
+                        <li>Vela</li>
+                    </ul>
+                    <ul>
+                        <li>Sándwich de jamón y queso</li>
+                        <li>Yogur con granola</li>
+                        <li>Macedonia de frutas</li>
+                        <li>Una chocolatina</li>
+                        <li>Pancakes</li>
+                        <li>Zumo</li>
+                        <li>Café</li>
+                        <li>Nutella</li>
+                        <li>Miel</li>
+                        <li>Mini tarta</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<section class="gallery" id="galeria">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Momentos que emocionan</div>
+            <h2>Un vistazo a nuestras creaciones</h2>
+            <p>Cada bandeja tiene su propia personalidad. ¡La próxima puede ser para alguien especial!</p>
+        </div>
+        <div class="gallery-grid">
+            <img src="IMG-20261104-WA0060.jpg" alt="Bandeja rosa de desayuno sorpresa decorada">
+            <img src="IMG-20261104-WA0085.jpg" alt="Desayunos personalizados y arreglos de globos para celebraciones">
+        </div>
+        <div style="text-align:center;margin-top:30px">
+            <a class="btn" href="galeria.html">Ver todas las imágenes de la galería</a>
+        </div>
+    </div>
+</section>
+<section id="reservas">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">¡Vamos a preparar una sorpresa!</div>
+            <h2>Reserva tu desayuno</h2>
+            <p>Completa los datos y envíanos tu solicitud por WhatsApp. Confirmaremos contigo la disponibilidad.</p>
+        </div>
+        <div class="booking-grid">
+            <div class="booking-copy">
+                <h2>Tu detalle, a tu manera 🎁</h2>
+                <p>Personalizamos el desayuno según la ocasión y los gustos de esa persona especial.</p>
+                <ul>
+                    <li>Desayuno con temática +5€</li>
+                    <li>Presentaciones personalizadas</li>
+                    <li>Envío gratis solo en jaén capital</li>
+                    <li>Atención cercana y con cariño</li>
+                </ul>
+                <p><strong>Importante:</strong> El pedido se confirma una vez que esté pagado enviando una captura, a patir de ahí empezamos a trabjar en tu pedido.</p>
+            </div>
+            <div class="booking-form">
+                <form id="bookingForm"><div class="form-grid">
+                    <div class="field">
+                        <label for="name">Tu nombre</label>
+                        <input id="name" name="name" required placeholder="Nombre completo">
+                    </div>
+                    <div class="field">
+                        <label for="phone">Teléfono</label>
+                        <input id="phone" name="phone" required type="tel" placeholder="Tu teléfono">
+                    </div>
+                    <div class="field">
+                        <label for="date">Fecha de entrega</label>
+                        <input id="date" name="date" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="time">Hora preferida</label>
+                        <input id="time" name="time" type="time">
+                    </div>
+                    <div class="field">
+                        <label for="occasion">Ocasión</label>
+                        <select id="occasion" name="occasion" required>
+                            <option value="">Selecciona una ocasión</option>
+                            <option>Cumpleaños</option>
+                            <option>Aniversario</option>
+                            <option>Boda</option>
+                            <option>Jubilación</option>
+                            <option>Sorpresa romántica</option>
+                            <option>Otra ocasión</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="recipient">¿Para quién es?</label>
+                        <input id="recipient" name="recipient" placeholder="Nombre del destinatario">
+                    </div>
+                    <div class="field wide">
+                        <label for="details">Otros detalles del pedido</label>
+                        <textarea id="details" name="details" placeholder="Dirección de entrega, alergias..."></textarea>
+                    </div>
+                    <h3 class="titulo" style="text-align: center; font-size: 15px;">¡PERSONALIZA TU DESAYUNO!</h3> <br>
+                     <div class="field">
+                        <label for="pan">Pan</label>
+                        <select id="pan" name="pan" required>
+                            <option value="">Selecciona el pan</option>
+                            <option>Sandwich</option>
+                            <option>Croisant</option>
+                        </select>
+                    </div>
+                     <div class="field">
+                        <label for="zumos">Zumos</label>
+                        <select id="zumos" name="zumos" required>
+                            <option value="">Selecciona una zumo</option>
+                            <option>Naranja</option>
+                            <option>Melocotón</option>
+                            <option>Piña</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="cafe">Café</label>
+                        <select id="cafe" name="cafe" required>
+                            <option value="">Selecciona el café</option>
+                            <option>Cappuccino</option>
+                            <option>Espreso</option>
+                            <option>Light sin lactosa</option>
+                            <option>Descafeinado</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="Yogurt">Yogurt</label>
+                        <select id="Yogurt" name="Yogurt" required>
+                            <option value="">Selecciona el yogurt</option>
+                            <option>Fresa</option>
+                            <option>Griego natural</option>
+                            <option>Griego con azúcar</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="tarta">Tarta</label>
+                        <select id="tarta" name="tarta" required>
+                            <option value="">Selecciona la tarta</option>
+                            <option>Mini tarta</option>
+                            <option>Tarta de queso</option>
+                            <option>Torre de donuts</option>
+                        </select>
+                    </div> <br>
+                    <button class="btn" type="submit">Enviar reserva por WhatsApp</button>
+                    <p class="form-note">Al enviar, se abrirá WhatsApp con los datos de tu solicitud para que puedas revisarlos.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contacto">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Estamos para ayudarte</div>
+            <h2>Contacta con DesayunArte</h2>
+            <p>¿Tienes una idea o quieres consultar un pedido? Escríbenos.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Información de contacto</h3>
+                <div class="contact-line">
+                    <span>📍</span>
+                    <div><strong>Zona de entrega</strong>Jaén capital</div>
+                </div>
+                <div class="contact-line">
+                    <span>📱</span>
+                    <div>
+                        <strong>WhatsApp / Teléfono</strong>
+                        <a href="https://wa.me/34602504311" target="_blank" rel="noopener">602 50 43 11</a>
+                    </div>
+                </div>
+                <div class="contact-line">
+                    <span>📸</span>
+                    <div>
+                        <strong>Instagram</strong>
+                        <a href="https://instagram.com/desayunarte2026" target="_blank" rel="noopener">@desayunarte2026</a>
+                    </div>
+                </div>
+                <div class="social">
+                    <a class="btn" href="https://wa.me/34602504311" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+                    <a class="btn light" href="https://instagram.com/desayunarte2026" target="_blank" rel="noopener">Ver Instagram</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <h3>¡Tu próxima sorpresa empieza aquí!</h3>
+                <p>Regala sabor, emoción y un momento inolvidable. Contacta para consultar opciones, personalización y disponibilidad de entrega.</p>
+                <img src="IMG-20261104-WA0055.jpg" alt="Detalle de desayuno sorpresa" style="width:100%;height:250px;object-fit:cover;border-radius:16px">
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<footer><div class="container">© <span id="year"></span> Desayun.Arte2026 · Desayunos sorpresa en Jaén capital · Hecho con cariño 🎀</div></footer>
+<script>
+const menuButton=document.querySelector('.menu-toggle'),nav=document.querySelector('#navlinks');
+menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',open?'true':'false');menuButton.textContent=open?'✕':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent='☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const dateInput=document.getElementById('date');const today=new Date();dateInput.min=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;
+const v=id=>document.getElementById(id).value.trim();
+const message=`¡Hola, Desayun.Arte2026! Quiero solicitar una reserva de desayuno sorpresa.%0A%0A*Nombre:* ${encodeURIComponent(v('name'))}%0A*Teléfono:* ${encodeURIComponent(v('phone'))}%0A*Fecha:* ${encodeURIComponent(v('date'))}%0A*Hora preferida:* ${encodeURIComponent(v('time')||'Sin preferencia')}%0A*Ocasión:* ${encodeURIComponent(v('occasion'))}%0A*Destinatario:* ${encodeURIComponent(v('recipient')||'No indicado')}%0A*Detalles:* ${encodeURIComponent(v('details')||'Sin detalles adicionales')}
+"Detalles del pedido:"
+%0A*Pan:* ${encodeURIComponent(v('pan'))}%0A*Zumos:* ${encodeURIComponent(v('zumos'))}%0A*Café:* ${encodeURIComponent(v('cafe'))}%0A*Yogurt:* ${encodeURIComponent(v('Yogurt'))}%0A*Tarta:* ${encodeURIComponent(v('tarta'))}%0A¿Podéis confirmarme disponibilidad y opciones?`;
+window.open('https://wa.me/34602504311?text='+message,'_blank','noopener');
+});
+</script>
+</body></html>
