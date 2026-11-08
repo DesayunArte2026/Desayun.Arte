@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="DesayunArte2026: desayunos sorpresa personalizados para cumpleaños, aniversarios y ocasiones especiales en Jaén capital.">
-<link rel="stylesheet" href="all.min.css">
-<link rel="stylesheet" href="fontawesome.min.css">
 <title>DesayunArte2026 | Desayunos sorpresa</title>
 <style>
 :root{--pink:#ffc6cb;--pink-light:#fff0f1;--rose:#d96f87;--wine:#562832;--ink:#302329;--cream:#fffaf8;--shadow:0 12px 35px #56283215}
@@ -382,7 +380,7 @@ const dateInput=document.getElementById('date');const today=new Date();dateInput
 document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;
 const v=id=>document.getElementById(id).value.trim();
 const message=`¡Hola, Desayun.Arte2026! Quiero solicitar una reserva de desayuno sorpresa.%0A%0A*Nombre:* ${encodeURIComponent(v('name'))}%0A*Teléfono:* ${encodeURIComponent(v('phone'))}%0A*Fecha:* ${encodeURIComponent(v('date'))}%0A*Hora preferida:* ${encodeURIComponent(v('time')||'Sin preferencia')}%0A*Ocasión:* ${encodeURIComponent(v('occasion'))}%0A*Destinatario:* ${encodeURIComponent(v('recipient')||'No indicado')}%0A*Detalles:* ${encodeURIComponent(v('details')||'Sin detalles adicionales')}
-"Detalles del pedido:"
+%0A%"Detalles del pedido:"
 %0A*Pan:* ${encodeURIComponent(v('pan'))}%0A*Zumos:* ${encodeURIComponent(v('zumos'))}%0A*Café:* ${encodeURIComponent(v('cafe'))}%0A*Yogurt:* ${encodeURIComponent(v('Yogurt'))}%0A*Tarta:* ${encodeURIComponent(v('tarta'))}%0A¿Podéis confirmarme disponibilidad y opciones?`;
 window.open('https://wa.me/34602504311?text='+message,'_blank','noopener');
 });
