@@ -299,7 +299,7 @@ footer{background:var(--wine);color:#fff0f1;padding:27px 0;text-align:center;fon
                         <select id="cafe" name="cafe" required>
                             <option value="">Selecciona el café</option>
                             <option>Cappuccino</option>
-                            <option>Espreso</option>
+                            <option>Espresso</option>
                             <option>Light sin lactosa</option>
                             <option>Descafeinado</option>
                         </select>
@@ -381,7 +381,7 @@ const dateInput=document.getElementById('date');const today=new Date();dateInput
 document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;
 const v=id=>document.getElementById(id).value.trim();
 const message=`¡Hola, Desayun.Arte2026! Quiero solicitar una reserva de desayuno sorpresa.%0A%0A*Nombre:* ${encodeURIComponent(v('name'))}%0A*Teléfono:* ${encodeURIComponent(v('phone'))}%0A*Fecha:* ${encodeURIComponent(v('date'))}%0A*Hora preferida:* ${encodeURIComponent(v('time')||'Sin preferencia')}%0A*Ocasión:* ${encodeURIComponent(v('occasion'))}%0A*Destinatario:* ${encodeURIComponent(v('recipient')||'No indicado')}%0A*Detalles:* ${encodeURIComponent(v('details')||'Sin detalles adicionales')}
-%0A"Detalles del pedido:"
+%0ADetalles del pedido:
 %0A*Pan:* ${encodeURIComponent(v('pan'))}%0A*Zumos:* ${encodeURIComponent(v('zumos'))}%0A*Café:* ${encodeURIComponent(v('cafe'))}%0A*Yogurt:* ${encodeURIComponent(v('Yogurt'))}%0A*Tarta:* ${encodeURIComponent(v('tarta'))}%0A¿Podéis confirmarme disponibilidad y opciones?`;
 window.open('https://wa.me/34602504311?text='+message,'_blank','noopener');
 });
