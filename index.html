@@ -279,9 +279,17 @@ footer{background:var(--wine);color:#fff0f1;padding:27px 0;text-align:center;fon
                         <input id="recipient" name="recipient" placeholder="Nombre del destinatario">
                     </div>
                     <div class="field wide">
-                        <label for="details">Otros detalles del pedido</label>
-                        <textarea id="details" name="details" placeholder="Dirección de entrega, alergias..."></textarea>
+                        <label for="mensaje">Mensaje para la tarjeta</label>
+                        <textarea id="mensaje" name="mensaje" maxlength="50" placeholder="escribe la dirección de entrega..."></textarea>
                     </div>
+                 <div class="field wide">
+                        <label for="details">Dirección de entrega</label>
+                        <textarea id="details" name="details" maxlength="50" placeholder="escribe la dirección de entrega..."></textarea>
+                 </div>
+                <div class="field wide">
+                        <label for="alergias">Alergias</label>
+                        <textarea id="alergias" name="alergias" maxlength="50" placeholder="especifica su alergia aquí..."></textarea>
+                    </div>    
                     <h3 class="titulo" style="text-align: center; font-size: 15px;">¡PERSONALIZA TU DESAYUNO!</h3> <br>
                      <div class="field">
                         <label for="pan">Pan</label>
@@ -386,7 +394,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const dateInput=document.getElementById('date');const today=new Date();dateInput.min=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
 document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;
 const v=id=>document.getElementById(id).value.trim();
-const message=`¡Hola, Desayun.Arte2026! Quiero solicitar una reserva de desayuno sorpresa.%0A%0A*Nombre:* ${encodeURIComponent(v('name'))}%0A*Teléfono:* ${encodeURIComponent(v('phone'))}%0A*Fecha:* ${encodeURIComponent(v('date'))}%0A*Hora preferida:* ${encodeURIComponent(v('time')||'Sin preferencia')}%0A*Ocasión:* ${encodeURIComponent(v('occasion'))}%0A*Destinatario:* ${encodeURIComponent(v('recipient')||'No indicado')}%0A*Detalles:* ${encodeURIComponent(v('details')||'Sin detalles adicionales')}
+const message=`¡Hola, Desayun.Arte2026! Quiero solicitar una reserva de desayuno sorpresa.%0A%0A*Nombre:* ${encodeURIComponent(v('name'))}%0A*Teléfono:* ${encodeURIComponent(v('phone'))}%0A*Fecha:* ${encodeURIComponent(v('date'))}%0A*Hora preferida:* ${encodeURIComponent(v('time')||'Sin preferencia')}%0A*Ocasión:* ${encodeURIComponent(v('occasion'))}%0A*Destinatario:* ${encodeURIComponent(v('recipient')||'No indicado')}%0A*Direcciónde entrega:* ${encodeURIComponent(v('details')||'Sin detalles adicionales')}%0A*Mensaje para la tarjeta:* ${encodeURIComponent(v('mensaje'))}%0A*Alergias:* ${encodeURIComponent(v('alergias'))}
 %0ADetalles del pedido:
 %0A*Pan:* ${encodeURIComponent(v('pan'))}%0A*Zumos:* ${encodeURIComponent(v('zumos'))}%0A*Café:* ${encodeURIComponent(v('cafe'))}%0A*Yogurt:* ${encodeURIComponent(v('Yogurt'))}%0A*Tarta:* ${encodeURIComponent(v('tarta'))}%0A¿Podéis confirmarme disponibilidad y opciones?`;
 window.open('https://wa.me/34602504311?text='+message,'_blank','noopener');
