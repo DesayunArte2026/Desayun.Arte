@@ -290,9 +290,17 @@ footer{background:var(--wine);color:#fff0f1;padding:27px 0;text-align:center;fon
                         <label for="alergias">Alergias</label>
                         <textarea id="alergias" name="alergias" maxlength="50" placeholder="especifica su alergia aquí..."></textarea>
                     </div>    
-                    <h3 class="titulo" style="text-align: center; font-size: 15px;">¡PERSONALIZA TU DESAYUNO!</h3> <br>
-                     <div class="field">
-                        <label for="pan">Pan</label>
+                    <h3 class="titulo" style="text-align: center; font-size: 15px;">¡PERSONALIZA TU DESAYUNO!</h3> <br> 
+                      <div class="field">
+                        <label for="cesta">Tamaño de la cesta</label>
+                        <select id="cesta" name="cesta" required>
+                            <option value="">Selecciona el pan</option>
+                            <option>Sandwich</option>
+                            <option>Croisant</option>
+                        </select>
+                      </div> <br>
+                   <div class="field">
+                         <label for="pan">Pan</label>
                         <select id="pan" name="pan" required>
                             <option value="">Selecciona el pan</option>
                             <option>Sandwich</option>
@@ -396,7 +404,7 @@ document.getElementById('bookingForm').addEventListener('submit',function(e){e.p
 const v=id=>document.getElementById(id).value.trim();
 const message=`¡Hola, Desayun.Arte2026! Quiero solicitar una reserva de desayuno sorpresa.%0A%0A*Nombre:* ${encodeURIComponent(v('name'))}%0A*Teléfono:* ${encodeURIComponent(v('phone'))}%0A*Fecha:* ${encodeURIComponent(v('date'))}%0A*Hora preferida:* ${encodeURIComponent(v('time')||'Sin preferencia')}%0A*Ocasión:* ${encodeURIComponent(v('occasion'))}%0A*Destinatario:* ${encodeURIComponent(v('recipient')||'No indicado')}%0A*Dirección de entrega:* ${encodeURIComponent(v('details')||'Sin detalles adicionales')}%0A*Mensaje para la tarjeta:* ${encodeURIComponent(v('mensaje'))}%0A*Alergias:* ${encodeURIComponent(v('alergias'))}
 %0ADetalles del pedido:
-%0A*Pan:* ${encodeURIComponent(v('pan'))}%0A*Zumos:* ${encodeURIComponent(v('zumos'))}%0A*Café:* ${encodeURIComponent(v('cafe'))}%0A*Yogurt:* ${encodeURIComponent(v('Yogurt'))}%0A*Tarta:* ${encodeURIComponent(v('tarta'))}%0A¿Podéis confirmarme disponibilidad y opciones?`;
+%0A*Tamaño de la cesta:* ${encodeURIComponent(v('cesta'))}%0A*Pan:* ${encodeURIComponent(v('pan'))}%0A*Zumos:* ${encodeURIComponent(v('zumos'))}%0A*Café:* ${encodeURIComponent(v('cafe'))}%0A*Yogurt:* ${encodeURIComponent(v('Yogurt'))}%0A*Tarta:* ${encodeURIComponent(v('tarta'))}%0A¿Podéis confirmarme disponibilidad y opciones?`;
 window.open('https://wa.me/34602504311?text='+message,'_blank','noopener');
 });
 </script>
